@@ -24,7 +24,7 @@ novaTarefa.addEventListener('click', criarTarefa);
 const BotaoConcluido = () => {
     const botaoConcluido = document.createElement('button')
     botaoConcluido.classList.add('check-button')
-    botaoConcluido.innerText('Concluir')
+    botaoConcluido.innerText = 'Concluir'
 
     botaoConcluido.addEventListener('click' , () =>{
         console.log('fui clicado')
