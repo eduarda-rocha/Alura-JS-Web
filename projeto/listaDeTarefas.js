@@ -13,7 +13,9 @@
     tarefa.classList.add('task')
 
     tarefa.appendChild(BotaoConcluido())
+    tarefa.appendChild(BotaoDeletar())
     lista.appendChild(tarefa)
+
     input.value=""
 }
 
@@ -36,5 +38,24 @@ const concluindoTarefa = (evento) => {
     const tarefaCompleta = botaoConcluido.parentElement
 
     tarefaCompleta.classList.toggle('done')
+}
+
+const BotaoDeletar = () => {
+    const botaoDeletar = document.createElement('button')
+    botaoDeletar.innerText = 'DELETAR'
+
+    botaoDeletar.addEventListener('click', deletandoTarefa)
+
+    return botaoDeletar
+}
+
+const deletandoTarefa = (evento) => {
+    const botaoDeletar = evento.target
+
+    const tarefaCompleta = botaoDeletar.parentElement
+
+    tarefaCompleta.remove()
+
+    return botaoDeletar
 }
 })()
